@@ -9,7 +9,8 @@ def forward(nv: NeuroVoiceLibrary) -> str:
 
 
 def end_logic(tag) -> dict:
-    pass
+    """ Логика окончания logic_unit (forward_logic). """
+    return {'tag': tag}
 
 
 def run(nv: NeuroVoiceLibrary, question: bool = False) -> dict:
