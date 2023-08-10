@@ -1,3 +1,8 @@
+""" Logic_unit: hangup_logic.
+Запуск логики - hangup_logic.run(param)
+
+"""
+
 from libraries import NeuroNetLibrary, NeuroVoiceLibrary
 
 
@@ -33,6 +38,7 @@ def hangup_action(tag: str) -> None:
     """ В данном модуле делается что-то, например записывается в nn.log (должна быть ссылка на объект nn в аргументах.
     Или запись в БД. В ТЗ описание модуля отсутствовало"""
     print(f"что-то делаем с тегом: {tag}")
+
 
 def end_logic(nn) -> str:
     """ Логика окончания logic_unit (hungup_logic). """
