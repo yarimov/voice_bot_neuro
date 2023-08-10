@@ -26,8 +26,11 @@ def hello_null(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
         return end_logic("NULL")
 
 
-def hello_repeat():
-    pass
+def hello_repeat(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
+    """ Логика обработки ответа пользователя: - "еще раз". """
+    nv.say('hello_repeat')
+    user_answer = has_reaction_by_answer()
+    return map_resolver(nn, nv, user_answer=user_answer)
 
 
 def has_reaction_by_answer():
