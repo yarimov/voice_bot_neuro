@@ -128,7 +128,9 @@ def end_logic(user_answer: str) -> dict:
 
 
 def run(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, default: bool = False, confirm: bool = False) -> dict:
-    pass
+    """Запуск логики hello_logic"""
+    if default or confirm:
+        return recommend_main(nn, nv)
 
 
 state_map = {
