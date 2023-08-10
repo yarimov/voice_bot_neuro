@@ -42,7 +42,14 @@ def recommend_score_negative(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
 
 
 def recommend_score_neutral(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
-    pass
+    """ Логика обработки ответа пользователя: - "Возможно". """
+    nv.say('recommend_score_neutral')
+    # Воспроизведение сообщения 'recommend_score_neutral'
+    user_answer = has_reaction_by_answer()
+    # Запрос ответа пользователя
+    return map_resolver(nn, nv, user_answer=user_answer)
+    # Определение дальнейшего шага (функции)
+
 
 def recommend_score_positive(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
     pass
