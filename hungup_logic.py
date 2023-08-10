@@ -41,10 +41,28 @@ def end_logic(nn) -> str:
 
 def run(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, null: bool = None, confirm: bool = True, wrong_time: bool = None,
         recommendation_score: int = None) -> str | bool:
-    pass
+    """Запуск логики hangup_logic"""
+    if not confirm:
+        hangup_action(hangup_wrong_time(nv))
+        return end_logic(nn)
+    if wrong_time:
+        hangup_action(hangup_wrong_time(nv))
+        return end_logic(nn)
+    if recommendation_score in (0, 1, 2, 3, 4, 5, 6, 7, 8):
+        hangup_action(hangup_negative(nv))
+        return end_logic(nn)
+    if recommendation_score in (9, 10):
+        hangup_action(hangup_positive(nv))
+        return end_logic(nn)
+    if null:
+        hangup_action(hangup_null(nv))
+        return end_logic(nn)
+
+    return False
+
 
 if __name__ == "__main__":
     neuro_net = NeuroNetLibrary()
     neuro_voice = NeuroVoiceLibrary()
-    res = run(neuro_net, neuro_voice)
+    res = run(neuro_net, neuro_voice, confirm=False)
     print(res)
