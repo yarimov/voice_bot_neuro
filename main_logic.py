@@ -50,7 +50,28 @@ def run(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, default: bool = False, confi
     pass
 
 
-state_map = {}
+state_map = {
+    'NULL': recommend_null,
+    'DEFAULT': recommend_default,
+    'answer_zero': end_logic,
+    'answer_one': end_logic,
+    'answer_two': end_logic,
+    'answer_three': end_logic,
+    'answer_four': end_logic,
+    'answer_five': end_logic,
+    'answer_six': end_logic,
+    'answer_seven': end_logic,
+    'answer_eight': end_logic,
+    'answer_nine': end_logic,
+    'answer_ten': end_logic,
+    'answer_not': recommend_score_negative,
+    'answer_neutral': recommend_score_neutral,
+    'answer_yes': recommend_score_positive,
+    'answer_repeat': recommend_repeat,
+    'answer_dont_know': recommend_repeat_2,
+    'answer_wrong_time': end_logic,
+    'answer_question': end_logic,
+}
 # Словарь с адресами функций, участвует в определении следующего шага логики.
 
 
