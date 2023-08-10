@@ -1,3 +1,8 @@
+""" Logic_unit: forward_logic.
+Запуск логики - forward_logic.run(param)
+
+"""
+
 from libraries import NeuroVoiceLibrary
 
 
