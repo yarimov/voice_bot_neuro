@@ -30,7 +30,9 @@ def hangup_null(nv: NeuroVoiceLibrary) -> str:
 
 
 def hangup_action(tag: str) -> None:
-    pass
+    """ В данном модуле делается что-то, например записывается в nn.log (должна быть ссылка на объект nn в аргументах.
+    Или запись в БД. В ТЗ описание модуля отсутствовало"""
+    print(f"что-то делаем с тегом: {tag}")
 
 def end_logic(nn) -> str:
     pass
