@@ -1,3 +1,22 @@
+""" Logic_unit: main_logic.
+Запуск логики - main_unit.run(param)
+финальный ответ формируется в end_logic.
+В модуле приняты следующие названия сущностей и интентов:
+    nlu.extract('Ноль', 'answer_zero');
+    ...
+    nlu.extract('Десять', 'answer_ten');
+    nlu.extract('Нет', 'answer_not');
+    nlu.extract('Возможно', 'answer_neutral');
+    nlu.extract('Да', 'answer_yes');
+    nlu.extract('Еще раз', 'answer_repeat');
+    nlu.extract('Не знаю', 'answer_dont_know');
+    nlu.extract('Занят', 'answer_wrong_time');
+    nlu.extract('Вопрос', 'answer_question');
+    'NULL' - не сказано ни одного слова;
+    'DEFAULT'- не подошел ни один вариант ответа.
+
+"""
+
 from libraries import NeuroNetLibrary, NeuroVoiceLibrary
 
 
@@ -161,5 +180,5 @@ state_map = {
 if __name__ == "__main__":
     neuro_net = NeuroNetLibrary()
     neuro_voice = NeuroVoiceLibrary()
-    res = run(neuro_net, neuro_voice)
+    res = run(neuro_net, neuro_voice, default=True)
     print(res)
