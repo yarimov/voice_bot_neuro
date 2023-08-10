@@ -16,7 +16,11 @@ def hangup_negative(nv: NeuroVoiceLibrary) -> str:
 
 
 def hangup_wrong_time(nv: NeuroVoiceLibrary) -> str:
-    pass
+    nv.say('hangup_wrong_time')
+    # Воспроизведение сообщения 'hangup_wrong_time'
+    tag = "нет времени для разговора"
+    return tag
+
 
 def hangup_null(nv: NeuroVoiceLibrary) -> str:
     pass
