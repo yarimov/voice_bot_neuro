@@ -10,10 +10,14 @@ def end_logic(tag) -> dict:
 
 
 def run(nv: NeuroVoiceLibrary, question: bool = False) -> dict:
-    pass
+    """Запуск логики forward_logic"""
+    if question:
+        return end_logic(forward(nv))
+    return {}
 
 
 if __name__ == "__main__":
     neuro_voice = NeuroVoiceLibrary()
-    res = run()
+    res = run(nv=neuro_voice, question=True)
     print(res)
+
