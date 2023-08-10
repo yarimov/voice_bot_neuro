@@ -35,7 +35,8 @@ def hangup_action(tag: str) -> None:
     print(f"что-то делаем с тегом: {tag}")
 
 def end_logic(nn) -> str:
-    pass
+    """ Логика окончания logic_unit (hungup_logic). """
+    return 'complete'
 
 
 def run(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, null: bool = None, confirm: bool = True, wrong_time: bool = None,
