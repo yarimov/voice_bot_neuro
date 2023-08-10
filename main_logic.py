@@ -2,7 +2,13 @@ from libraries import NeuroNetLibrary, NeuroVoiceLibrary
 
 
 def recommend_main(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
-    pass
+    """ Логика начального вопроса. """
+    nv.say('recommend_main')
+    # Воспроизведение сообщения 'recommend_main'
+    user_answer = has_reaction_by_answer()
+    # Запрос ответа пользователя
+    return map_resolver(nn, nv, user_answer=user_answer)
+    # Определение дальнейшего шага (функции)
 
 
 def recommend_repeat(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
