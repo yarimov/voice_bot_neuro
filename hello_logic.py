@@ -48,8 +48,16 @@ def map_resolver(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, user_answer: str):
     return result(nn, nv) if result is not end_logic else result(user_answer)
 
 
-def end_logic(user_answer: str):
-    pass
+def end_logic(user_answer: str) -> dict:
+    """ Логика окончания logic_unit (hello_logic). """
+    entity_map = {
+        'NULL': {'NULL': True},
+        'DEFAULT': {'DEFAULT': True},
+        'answer_yes': {'confirm': True},
+        'answer_not': {'wrong_time': True},
+    }
+    # Словарь с параметрами для запуска следующих логических модулей
+    return {'user_answer': user_answer, 'entity/value': entity_map[user_answer]}
 
 
 def run(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary) -> dict:
