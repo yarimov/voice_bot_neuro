@@ -77,7 +77,18 @@ def recommend_null(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
 
 
 def recommend_default(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
-    pass
+    """ Логика обработки ответа пользователя, если ничего не подошло. """
+    if nn.counter("recommend_default") == 0:
+        nv.say('recommend_null')
+        # Воспроизведение сообщения 'recommend_null'
+        user_answer = has_reaction_by_answer()
+        # Запрос ответа пользователя
+        nn.counter("recommend_default", "+")
+        # Прибавление счетчика "recommend_default" +1
+        return map_resolver(nn, nv, user_answer=user_answer)
+        # Определение дальнейшего шага (функции)
+    else:
+        return end_logic("DEFAULT")
 
 
 def has_reaction_by_answer():
