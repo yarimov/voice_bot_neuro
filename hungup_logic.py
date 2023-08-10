@@ -2,7 +2,11 @@ from libraries import NeuroNetLibrary, NeuroVoiceLibrary
 
 
 def hangup_positive(nv: NeuroVoiceLibrary) -> str:
-    pass
+    nv.say('hangup_positive')
+    # Воспроизведение сообщения 'hangup_positive'
+    tag = "высокая оценка"
+    return tag
+
 
 
 def hangup_negative(nv: NeuroVoiceLibrary) -> str:
