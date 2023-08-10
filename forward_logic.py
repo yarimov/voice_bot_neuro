@@ -2,7 +2,10 @@ from libraries import NeuroVoiceLibrary
 
 
 def forward(nv: NeuroVoiceLibrary) -> str:
-    pass
+    nv.say('hangup_positive')
+    # Воспроизведение сообщения 'hangup_positive'
+    tag = "перевод на оператора"
+    return tag
 
 
 def end_logic(tag) -> dict:
