@@ -8,9 +8,11 @@ def hangup_positive(nv: NeuroVoiceLibrary) -> str:
     return tag
 
 
-
 def hangup_negative(nv: NeuroVoiceLibrary) -> str:
-    pass
+    nv.say('hangup_negative')
+    # Воспроизведение сообщения 'hangup_negative'
+    tag = "низкая оценка"
+    return tag
 
 
 def hangup_wrong_time(nv: NeuroVoiceLibrary) -> str:
