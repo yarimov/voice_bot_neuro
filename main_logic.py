@@ -62,10 +62,23 @@ def recommend_score_positive(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
 
 
 def recommend_null(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
-    pass
+    """ Логика обработки ответа пользователя, который ничего не сказал (NULL)."""
+    if nn.counter("recommend_null") == 0:
+        nv.say('recommend_null')
+        # Воспроизведение сообщения 'recommend_null'
+        user_answer = has_reaction_by_answer()
+        # Запрос ответа пользователя
+        nn.counter("recommend_null", "+")
+        # Прибавление счетчика "recommend_null" +1
+        return map_resolver(nn, nv, user_answer=user_answer)
+        # Определение дальнейшего шага (функции)
+    else:
+        return end_logic("NULL")
+
 
 def recommend_default(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
     pass
+
 
 def has_reaction_by_answer():
     """ Логика получения ответа от пользователя. """
