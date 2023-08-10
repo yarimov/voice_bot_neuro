@@ -12,7 +12,14 @@ def recommend_main(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
 
 
 def recommend_repeat(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
-    pass
+    """ Логика обработки ответа пользователя: - "еще раз". """
+    nv.say('recommend_repeat')
+    # Воспроизведение сообщения 'recommend_repeat'
+    user_answer = has_reaction_by_answer()
+    # Запрос ответа пользователя
+    return map_resolver(nn, nv, user_answer=user_answer)
+    # Определение дальнейшего шага (функции)
+
 
 
 def recommend_repeat_2(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
