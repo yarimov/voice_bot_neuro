@@ -107,7 +107,24 @@ def map_resolver(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, user_answer: str):
 
 
 def end_logic(user_answer: str) -> dict:
-    pass
+    """ Логика окончания logic_unit (main_logic)"""
+    entity_map = {
+        'answer_zero': {'recommendation_score': 0},
+        'answer_one': {'recommendation_score': 1},
+        'answer_two': {'recommendation_score': 2},
+        'answer_three': {'recommendation_score': 3},
+        'answer_four': {'recommendation_score': 4},
+        'answer_five': {'recommendation_score': 5},
+        'answer_six': {'recommendation_score': 6},
+        'answer_seven': {'recommendation_score': 7},
+        'answer_eight': {'recommendation_score': 8},
+        'answer_nine': {'recommendation_score': 9},
+        'answer_ten': {'recommendation_score': 10},
+        'answer_wrong_time': {'wrong_time': True},
+        'answer_question': {'question': True}
+    }
+    # Словарь с параметрами для запуска следующих логических модулей
+    return {'user_answer': user_answer, 'entity/value': entity_map[user_answer]}
 
 
 def run(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, default: bool = False, confirm: bool = False) -> dict:
