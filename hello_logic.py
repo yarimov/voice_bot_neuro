@@ -11,8 +11,19 @@ def hello(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
     # Определение дальнейшего шага (функции)
 
 
-def hello_null():
-    pass
+def hello_null(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
+    """ Логика обработки ответа пользователя, который ничего не сказал (NULL)."""
+    if nn.counter("hello_null") == 0:
+        nv.say('hello_null')
+        # Воспроизведение сообщения 'hello_null'
+        user_answer = has_reaction_by_answer()
+        # Запрос ответа пользователя
+        nn.counter("hello_null", "+")
+        # Прибавление счетчика "hello_null" +1
+        return map_resolver(nn, nv, user_answer=user_answer)
+        # Определение дальнейшего шага (функции)
+    else:
+        return end_logic("NULL")
 
 
 def hello_repeat():
