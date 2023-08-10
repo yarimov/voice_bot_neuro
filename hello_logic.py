@@ -2,7 +2,13 @@ from libraries import NeuroNetLibrary, NeuroVoiceLibrary
 
 
 def hello(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
-    pass
+    """ Логика начального приветствия. """
+    nv.say('hello')
+    # Воспроизведение сообщения 'hello'
+    user_answer = has_reaction_by_answer()
+    # Запрос ответа пользователя
+    return map_resolver(nn, nv, user_answer=user_answer)
+    # Определение дальнейшего шага (функции)
 
 
 def hello_null():
@@ -14,7 +20,11 @@ def hello_repeat():
 
 
 def has_reaction_by_answer():
-    pass
+    """ Логика получения ответа от пользователя. """
+    user_answer = 'answer_yes'
+    # Имитация ответа пользователя
+    return user_answer
+    # Описать, что должно быть в этом модуле...
 
 
 def map_resolver(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, user_answer: str):
@@ -24,7 +34,7 @@ def map_resolver(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary, user_answer: str):
     return result(nn, nv) if result is not end_logic else result(user_answer)
 
 
-def end_logic():
+def end_logic(user_answer: str):
     pass
 
 
