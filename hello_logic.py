@@ -1,3 +1,16 @@
+""" Logic_unit: hello_logic.
+Запуск логики - hello_unit.run(param)
+финальный ответ формируется в end_logic.
+В модуле приняты следующие названия сущностей и интентов:
+    nlu.extract('Да', 'answer_yes');
+    nlu.extract('Нет', 'answer_yes');
+    nlu.extract('Занят', 'answer_wrong_time');
+    nlu.extract('Еще раз', 'answer_repeat');
+    'NULL' - не сказано ни одного слова;
+    'DEFAULT'- не подошел ни один вариант ответа.
+
+"""
+
 from libraries import NeuroNetLibrary, NeuroVoiceLibrary
 
 
@@ -73,6 +86,7 @@ state_map = {
     'answer_wrong_time': end_logic,
     'answer_repeat': hello_repeat
 }
+# Словарь с адресами функций, участвует в определении следующего шага логики.
 
 
 if __name__ == "__main__":
