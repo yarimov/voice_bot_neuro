@@ -30,8 +30,16 @@ def recommend_repeat_2(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
     return map_resolver(nn, nv, user_answer=user_answer)
     # Определение дальнейшего шага (функции)
 
+
 def recommend_score_negative(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
-    pass
+    """ Логика обработки ответа пользователя: - "Нет". """
+    nv.say('recommend_score_negative')
+    # Воспроизведение сообщения 'recommend_score_negative'
+    user_answer = has_reaction_by_answer()
+    # Запрос ответа пользователя
+    return map_resolver(nn, nv, user_answer=user_answer)
+    # Определение дальнейшего шага (функции)
+
 
 def recommend_score_neutral(nn: NeuroNetLibrary, nv: NeuroVoiceLibrary):
     pass
