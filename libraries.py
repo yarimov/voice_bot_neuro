@@ -1,8 +1,20 @@
+""" Lib_unit: libraries.
+Это вспомогательный модуль, для имитации работы некоторых методов классов NeuroNetLibrary, NeuroVoiceLibrary.
+Используется для отладки кода и тестирования. Не используется в продакшн версии!
+
+"""
+
+
 class NeuroNetLibrary:
     def __init__(self):
         self.counter_msg = {"hello": 0, "hello_null": 0, "recommend_null": 0, 'recommend_default': 0}
 
     def counter(self, name, op=None):
+        """ Метод для прибавления счетчика. Оператор '+' прибавляет счетчик на 1, целочисленный аргумент устанавливает
+        значение счетчика
+
+        """
+
         if op == "+":
             self.counter_msg[name] += 1
         if str(op).isdigit():
@@ -38,4 +50,7 @@ class NeuroVoiceLibrary:
         }
 
     def say(self, prompt_name):
+        """ Метод вывода в консоль текстового сообщения по ключу
+
+        """
         return self.prompts[prompt_name]
